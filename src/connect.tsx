@@ -163,6 +163,8 @@ export default function connect(opts?: ConnectOptions) {
       }
 
       componentWillMount() {
+        console.log("Component will mount.");
+
         const { props } = this;
         this.subscribeToAllQueries(props);
         this.createAllMutationHandles(props);
@@ -190,6 +192,8 @@ export default function connect(opts?: ConnectOptions) {
       }
 
       componentWillUnmount() {
+        console.log("Component will unmount.");
+
         this.unsubcribeAllQueries();
 
         if (this.unsubscribeFromStore) {
